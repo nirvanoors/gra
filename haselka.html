@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona z hasłem</title>
+    <style>
+        /* Ustawienia stylów dla centralnego wyrównania */
+        body, html {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function checkPassword() {
+            // Pobierz wartość z pola hasła
+            const password = document.getElementById("password").value;
+            
+            // Sprawdź, czy hasło jest równe "ABCD"
+            if (password === "ABCD") {
+                // Przeniesienie do innej strony
+                window.location.href = "https://www.example.com"; // tutaj wstaw docelowy URL
+            } else {
+                alert("Nieprawidłowe hasło. Spróbuj ponownie.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Wybrane zdjęcie -->
+        <img src=".a.jpg" alt="Obrazek" />
+
+        <!-- Pole hasła -->
+        <input type="password" id="password" placeholder="Wpisz hasło" />
+
+        <!-- Przycisk do sprawdzenia hasła -->
+        <button onclick="checkPassword()">Zatwierdź</button>
+    </div>
+</body>
+</html>

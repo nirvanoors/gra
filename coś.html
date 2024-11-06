@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Podejrzanego</title>
+    <style>
+        /* Ustawienia stylu całej strony */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        /* Stylizacja profilu podejrzanego */
+        .profile-container {
+            background-color: #ffffff;
+            border: 2px solid #333;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        /* Stylizacja tytułu i opisu */
+        h1, h2 {
+            margin: 0;
+            color: #333;
+        }
+        .description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        /* Stylizacja dużego wyniku */
+        #result {
+            font-size: 2em;
+            margin: 20px 0;
+            color: #333;
+        }
+        /* Stylizacja formularza */
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input[type="password"] {
+            padding: 8px;
+            font-size: 1em;
+            width: 100%;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            border: none;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-container">
+        <h1>Profil Podejrzanego</h1>
+        <h2>Imię: [Zablokowane]</h2>
+        <p class="description">Wprowadź imię sprawcy, aby zweryfikować swoją torzsamość.</p>
+
+        <div id="result">---</div>
+
+        <form onsubmit="checkPassword(); return false;">
+            <label for="password">Identyfikacja:</label>
+            <input type="password" id="password" placeholder="Wpisz imie osoby która dokonała zbrodni" required>
+            <button type="submit" id="submitButton">Sprawdź</button>
+        </form>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById("password");
+            const resultDiv = document.getElementById("result");
+            const submitButton = document.getElementById("submitButton");
+
+            // Pobierz wartość hasła
+            const passwordValue = passwordInput.value;
+
+            // Sprawdź wartość i ustaw wynik
+            if (passwordValue === "1" || passwordValue === "2") {
+                resultDiv.textContent = "51.812605579375976, 19.445749782436874";
+            } else if (passwordValue === "3" || passwordValue === "4") {
+                resultDiv.textContent = "NIE";
+            } else {
+                resultDiv.textContent = "Nieprawidłowe hasło";
+            }
+
+            // Zablokuj pole hasła i przycisk
+            passwordInput.disabled = true;
+            submitButton.disabled = true;
+        }
+    </script>
+
+</body>
+</html>
