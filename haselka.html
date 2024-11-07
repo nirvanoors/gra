@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Strona z hasłem</title>
     <style>
-        /* Ustawienia stylów dla centralnego wyrównania */
+        /* Stylizacja dla centralnego wyrównania elementów */
         body, html {
             display: flex;
             justify-content: center;
@@ -14,23 +14,27 @@
             margin: 0;
             font-family: Arial, sans-serif;
             background-color: #f3f3f3;
-        }
+			background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgfufZJO4_wLT36GAXoSo1332uqKSJdvk77w&s') no-repeat center center fixed;
+		}
         .container {
             text-align: center;
         }
         img {
             max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
+            height: 900px;
+            max-height: 80vh; /* Ustawienie maksymalnej wysokości obrazu */
+            margin-bottom: 40px; /* Odstęp poniżej zdjęcia */
+			
+	  }
         input[type="password"] {
             padding: 10px;
             font-size: 16px;
             width: 200px;
             text-align: center;
+            margin-top: 10px; /* Dodanie odstępu nad polem hasła */
         }
         button {
-            margin-top: 10px;
+            margin-top: 15px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
@@ -44,7 +48,7 @@
             // Sprawdź, czy hasło jest równe "ABCD"
             if (password === "ABCD") {
                 // Przeniesienie do innej strony
-                window.location.href = "https://www.example.com"; // tutaj wstaw docelowy URL
+                window.location.href = "coś.html"; // tutaj wstaw docelowy URL
             } else {
                 alert("Nieprawidłowe hasło. Spróbuj ponownie.");
             }
@@ -53,8 +57,8 @@
 </head>
 <body>
     <div class="container">
-        <!-- Wybrane zdjęcie -->
-        <img src="obraz.jpg" alt="Obrazek" />
+        <!-- Zdjęcie wyświetlane nad polem hasła i przyciskiem -->
+        <img src="https://i.imgur.com/l4ZOyrn_d.jpeg?maxwidth=520&shape=thumb&fidelity=high" alt="Centrowane zdjęcie" class="center-image">
 
         <!-- Pole hasła -->
         <input type="password" id="password" placeholder="Wpisz hasło" />
